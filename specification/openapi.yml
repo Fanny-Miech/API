@@ -29,16 +29,16 @@ components:
           enum: ["co2", "pir"]
 
 paths:
-  /devices/{deviceId}:
-    get:
-      description: Get a device by id
-      responses:
-        '200':
-          description: A single device
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/device'
+  # /devices/{deviceId}:
+  #   get:
+  #     description: Get a device by id
+  #     responses:
+  #       '200':
+  #         description: A single device
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/device'
   /devices:
     get:
       description: Get all devices

@@ -39,17 +39,17 @@ Resources:
       CodeUri: ./src/get
       Handler: devices.get_devices
 
-  GetDevice: 
-    Type: AWS::Serverless::Function 
-    Properties: 
-      Tracing: Active 
-      Runtime: python3.8 
-      PackageType: Zip 
-      FunctionName: 
-        Fn::Sub: ${AppName}-get-device-${Stage} 
-      Description: Get a single device by id
-      CodeUri: ./src/get
-      Handler: device.get_device
+  # GetDevice: 
+  #   Type: AWS::Serverless::Function 
+  #   Properties: 
+  #     Tracing: Active 
+  #     Runtime: python3.8 
+  #     PackageType: Zip 
+  #     FunctionName: 
+  #       Fn::Sub: ${AppName}-get-device-${Stage} 
+  #     Description: Get a single device by id
+  #     CodeUri: ./src/get
+  #     Handler: device.get_device
 
 
   ApiRole: 
@@ -69,7 +69,7 @@ Resources:
             Action: sts:AssumeRole 
       Policies: 
         - PolicyName: 
-          Fn::Sub: ${AppName}-api-execution-role-policy-${Stage} 
+            Fn::Sub: ${AppName}-api-execution-role-policy-${Stage} 
           PolicyDocument: 
             Version: '2012-10-17' 
             Statement: 
